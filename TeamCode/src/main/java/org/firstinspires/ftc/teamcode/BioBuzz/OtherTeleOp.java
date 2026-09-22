@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 @TeleOp (name = "Carson DT TeleOp")
-public class CarsonTeleOp extends OpMode {
+public class OtherTeleOp extends OpMode {
     private RobotHardware robot = new RobotHardware();
 
     // Used to debounce the shooter feed button so one press = one feed cycle
@@ -62,9 +62,9 @@ public class CarsonTeleOp extends OpMode {
 
         // Intake
 
-        if (gamepad2.right_trigger > 0.1) {
+        if (gamepad1.right_trigger > 0.1) {
             robot.setIntakePower(1.0);
-        } else if (gamepad2.left_trigger > 0.1) {
+        } else if (gamepad1.left_trigger > 0.1) {
             robot.setIntakePower(-1.0);
         } else {
             robot.setIntakePower(0.0);
