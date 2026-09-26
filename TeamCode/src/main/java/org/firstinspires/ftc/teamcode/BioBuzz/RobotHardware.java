@@ -17,17 +17,6 @@ public class RobotHardware {
 
     private DcMotor intake;
 
-    private DcMotor shooter;
-    private Servo shooterFeed;
-
-    // Shooter feed servo positions — tune these to your mechanism
-    private static final double SHOOTER_FEED_ZERO = 0.0;
-    private static final double SHOOTER_FEED_PUSH = 0.6; // Placeholder, tune on robot
-    private static final double SHOOTER_FEED_PUSH_TIME_MS = 250; // time before returning to zero, placeholder, tune on robot
-
-    private final ElapsedTime shooterFeedTimer = new ElapsedTime();
-    private boolean shooterFeedPushing = false;
-
 
     // Runs on init. The HardwareMap parameter type is called hwMap inside the code.
     public void init(HardwareMap hwMap) {
@@ -40,9 +29,6 @@ public class RobotHardware {
 
         intake = hwMap.get(DcMotor.class, "intake");
 
-        shooter = hwMap.get(DcMotor.class, "shooter");
-        shooterFeed = hwMap.get(Servo.class, "shooterFeed");
-
         // Tells the motors whether to run using the encoder or not.
         fr.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         fl.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
@@ -51,9 +37,6 @@ public class RobotHardware {
 
         intake.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        shooter.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-
-
         // Tells the code what direction to run the motors in
         rl.setDirection(DcMotorSimple.Direction.REVERSE);
         fl.setDirection(DcMotorSimple.Direction.REVERSE);
@@ -61,10 +44,6 @@ public class RobotHardware {
         rr.setDirection(DcMotorSimple.Direction.FORWARD);
 
         intake.setDirection(DcMotorSimple.Direction.FORWARD);
-        shooter.setDirection(DcMotorSimple.Direction.FORWARD);
-
-        // Start the feed servo at its zero position
-        shooterFeed.setPosition(SHOOTER_FEED_ZERO);
     }
 
     // Sets the direction of forward and backwards (y), strafing (x), and rotation (r)
@@ -88,27 +67,5 @@ public class RobotHardware {
     // Gives the intake power
     public void setIntakePower(double power) {
         intake.setPower(power);
-    }
-
-    public void setShooterPower(double power) {
-        shooter.setPower(power);
-    }
-
-    // Call this once when the feed button is pressed (already debounced by the caller).
-    // Pushes the servo forward; updateShooterFeed() will bring it back to zero after the delay.
-    public void feedShooter() {
-        if (!shooterFeedPushing) {
-            shooterFeed.setPosition(SHOOTER_FEED_PUSH);
-            shooterFeedTimer.reset();
-            shooterFeedPushing = true;
-        }
-    }
-
-    // Call this every loop iteration (TeleOp and Autonomous) so the servo returns to zero on time.
-    public void updateShooterFeed() {
-        if (shooterFeedPushing && shooterFeedTimer.milliseconds() > SHOOTER_FEED_PUSH_TIME_MS) {
-            shooterFeed.setPosition(SHOOTER_FEED_ZERO);
-            shooterFeedPushing = false;
-        }
     }
 }
