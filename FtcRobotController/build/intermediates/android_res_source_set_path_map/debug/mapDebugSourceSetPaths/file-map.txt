@@ -1,0 +1,8 @@
+com.qualcomm.ftcrobotcontroller.FtcRobotController-pngs-0 /Users/logan/Documents/GitHub/PP-2026-27-BIOBUZZ/FtcRobotController/build/generated/res/pngs/debug
+com.qualcomm.ftcrobotcontroller.FtcRobotController-updated_navigation_xml-1 /Users/logan/Documents/GitHub/PP-2026-27-BIOBUZZ/FtcRobotController/build/generated/updated_navigation_xml/debug
+com.qualcomm.ftcrobotcontroller.FtcRobotController-mergeDebugResources-2 /Users/logan/Documents/GitHub/PP-2026-27-BIOBUZZ/FtcRobotController/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.qualcomm.ftcrobotcontroller.FtcRobotController-mergeDebugResources-3 /Users/logan/Documents/GitHub/PP-2026-27-BIOBUZZ/FtcRobotController/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.qualcomm.ftcrobotcontroller.FtcRobotController-debug-4 /Users/logan/Documents/GitHub/PP-2026-27-BIOBUZZ/FtcRobotController/build/intermediates/merged_res/debug/mergeDebugResources
+com.qualcomm.ftcrobotcontroller.FtcRobotController-debug-5 /Users/logan/Documents/GitHub/PP-2026-27-BIOBUZZ/FtcRobotController/build/intermediates/packaged_res/debug/packageDebugResources
+com.qualcomm.ftcrobotcontroller.FtcRobotController-debug-6 /Users/logan/Documents/GitHub/PP-2026-27-BIOBUZZ/FtcRobotController/src/debug/res
+com.qualcomm.ftcrobotcontroller.FtcRobotController-main-7 /Users/logan/Documents/GitHub/PP-2026-27-BIOBUZZ/FtcRobotController/src/main/res

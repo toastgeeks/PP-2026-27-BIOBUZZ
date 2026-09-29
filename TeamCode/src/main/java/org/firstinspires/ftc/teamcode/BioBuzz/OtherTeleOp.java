@@ -24,9 +24,10 @@ public class OtherTeleOp extends OpMode {
         // Intake
 
         if (gamepad1.right_trigger > 0.1) {
-            robot.setIntakePower(.70);
+            robot.setIntakePower(.60
+            );
         } else if (gamepad1.left_trigger > 0.1) {
-            robot.setIntakePower(-.70);
+            robot.setIntakePower(-.60);
         } else {
             robot.setIntakePower(0.0);
         }

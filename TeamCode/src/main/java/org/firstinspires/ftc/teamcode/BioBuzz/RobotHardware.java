@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo; // Needs to be in angular not continuous
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.ElapsedTime;
+import com.pedropathing.revhub.localizers.PinpointConfig;
 
 public class RobotHardware {
 
@@ -16,7 +17,6 @@ public class RobotHardware {
     private DcMotor rl;
 
     private DcMotor intake;
-
 
     // Runs on init. The HardwareMap parameter type is called hwMap inside the code.
     public void init(HardwareMap hwMap) {

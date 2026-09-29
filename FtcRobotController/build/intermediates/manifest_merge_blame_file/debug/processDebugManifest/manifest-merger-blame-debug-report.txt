@@ -6,6 +6,8 @@
 6    android:versionName="11.2.1" >
 7
 8    <uses-sdk android:minSdkVersion="24" />
+8-->INJECTED
+8-->INJECTED
 9
 10    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 10-->/Users/logan/Documents/GitHub/PP-2026-27-BIOBUZZ/FtcRobotController/src/main/AndroidManifest.xml:7:3-79

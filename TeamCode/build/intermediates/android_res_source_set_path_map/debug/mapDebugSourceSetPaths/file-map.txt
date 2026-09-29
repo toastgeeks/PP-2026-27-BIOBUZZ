@@ -1,0 +1,7 @@
+org.firstinspires.ftc.teamcode.TeamCode-pngs-0 /Users/logan/Documents/GitHub/PP-2026-27-BIOBUZZ/TeamCode/build/generated/res/pngs/debug
+org.firstinspires.ftc.teamcode.TeamCode-updated_navigation_xml-1 /Users/logan/Documents/GitHub/PP-2026-27-BIOBUZZ/TeamCode/build/generated/updated_navigation_xml/debug
+org.firstinspires.ftc.teamcode.TeamCode-packageDebugResources-2 /Users/logan/Documents/GitHub/PP-2026-27-BIOBUZZ/TeamCode/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+org.firstinspires.ftc.teamcode.TeamCode-packageDebugResources-3 /Users/logan/Documents/GitHub/PP-2026-27-BIOBUZZ/TeamCode/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+org.firstinspires.ftc.teamcode.TeamCode-debug-4 /Users/logan/Documents/GitHub/PP-2026-27-BIOBUZZ/TeamCode/build/intermediates/merged_res/debug/mergeDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-5 /Users/logan/Documents/GitHub/PP-2026-27-BIOBUZZ/TeamCode/src/debug/res
+org.firstinspires.ftc.teamcode.TeamCode-main-6 /Users/logan/Documents/GitHub/PP-2026-27-BIOBUZZ/TeamCode/src/main/res

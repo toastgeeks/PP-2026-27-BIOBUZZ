@@ -24,9 +24,9 @@ public class CarsonTeleOp extends OpMode {
         // Intake
 
         if (gamepad2.right_trigger > 0.1) {
-            robot.setIntakePower(.70);
+            robot.setIntakePower(.60);
         } else if (gamepad2.left_trigger > 0.1) {
-            robot.setIntakePower(-.70);
+            robot.setIntakePower(-.60);
         } else {
             robot.setIntakePower(0.0);
         }

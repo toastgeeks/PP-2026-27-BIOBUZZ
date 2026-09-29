@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "org.firstinspires.ftc.teamcode.TeamCode-mergeDebugResources-16:/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "org.firstinspires.ftc.teamcode.TeamCode-mergeDebugResources-15:/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/Users/logan/.gradle/caches/9.1.0/transforms/f5d78fbfccb97c1e1fc940e375d0da0e/transformed/appcompat-1.2.0/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "source": "/Users/logan/.gradle/caches/9.7.1/transforms/27bf2d18b4ffad6bbdbd2e1bde5ef6e3/transformed/appcompat-1.2.0/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
