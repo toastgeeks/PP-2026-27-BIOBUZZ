@@ -1,10 +1,11 @@
-package org.firstinspires.ftc.teamcode.BioBuzz;
+package org.firstinspires.ftc.teamcode.BioBuzz.Tinkerfest;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import org.firstinspires.ftc.teamcode.BioBuzz.RobotHardware;
 
-@Autonomous (name = "Blue Tinker Auto")
-public class blueTinkerAuto extends LinearOpMode {
+@Autonomous (name = "Tinker Auto")
+public class tinkerAuto extends LinearOpMode {
 
     private RobotHardware robot = new RobotHardware();
 
@@ -18,8 +19,8 @@ public class blueTinkerAuto extends LinearOpMode {
 
         if (opModeIsActive()) {
 
-            // Strafe right at full power (y = 0, x = 1, r = 0)
-            robot.drive(0.0, 1.0, 0.0);
+            // Strafe left at full power (y = 0, x = -1, r = 0)
+            robot.drive(0.0, -1.0, 0.0);
 
             sleep(250); // run for 1 quarter second
 

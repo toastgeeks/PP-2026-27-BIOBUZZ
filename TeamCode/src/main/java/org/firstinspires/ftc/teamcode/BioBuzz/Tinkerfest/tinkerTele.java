@@ -1,10 +1,11 @@
-package org.firstinspires.ftc.teamcode.BioBuzz;
+package org.firstinspires.ftc.teamcode.BioBuzz.Tinkerfest;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import org.firstinspires.ftc.teamcode.BioBuzz.RobotHardware;
 
-@TeleOp (name = "Carson DT TeleOp")
-public class CarsonTeleOp extends OpMode {
+@TeleOp (name = "Tinker TeleOp")
+public class tinkerTele extends OpMode {
     private RobotHardware robot = new RobotHardware();
 
     @Override
