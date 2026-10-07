@@ -67,6 +67,5 @@ public class teleOp extends OpMode {
             }
 
             hwMap.setShooterPower(shooterOn ? shooterPower : 0.0);
-            
         }
     }
