@@ -2,10 +2,7 @@ package org.firstinspires.ftc.teamcode.BioBuzz;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import com.qualcomm.robotcore.hardware.Servo; // Needs to be in angular not continuous
 import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.qualcomm.robotcore.util.ElapsedTime;
-import com.pedropathing.revhub.localizers.PinpointConfig;
 
 public class RobotHardware {
 
@@ -17,6 +14,7 @@ public class RobotHardware {
     private DcMotor rl;
 
     private DcMotor intake;
+    private DcMotor shooter;
 
     // Runs on init. The HardwareMap parameter type is called hwMap inside the code.
     public void init(HardwareMap hwMap) {
@@ -28,6 +26,7 @@ public class RobotHardware {
         rl = hwMap.get(DcMotor.class, "rl");
 
         intake = hwMap.get(DcMotor.class, "intake");
+        shooter = hwMap.get(DcMotor.class, "shooter");
 
         // Tells the motors whether to run using the encoder or not.
         fr.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
@@ -36,6 +35,7 @@ public class RobotHardware {
         rl.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         intake.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        shooter.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         // Tells the code what direction to run the motors in
         rl.setDirection(DcMotorSimple.Direction.REVERSE);
@@ -44,6 +44,7 @@ public class RobotHardware {
         rr.setDirection(DcMotorSimple.Direction.FORWARD);
 
         intake.setDirection(DcMotorSimple.Direction.FORWARD);
+        shooter.setDirection(DcMotorSimple.Direction.FORWARD);
     }
 
     // Sets the direction of forward and backwards (y), strafing (x), and rotation (r)
@@ -67,5 +68,9 @@ public class RobotHardware {
     // Gives the intake power
     public void setIntakePower(double power) {
         intake.setPower(power);
+    }
+    // Gives the shooter power
+    public void setShooterPower(double power) {
+        shooter.setPower(power);
     }
 }
