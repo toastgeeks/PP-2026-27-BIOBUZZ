@@ -14,7 +14,7 @@ public class teleOp extends OpMode {
     private boolean lastDpadUp = false;
     private boolean lastDpadDown = false;
     private double lastNonZeroPower = 0.0;
-    private boolean lastAButton = false;
+    private boolean lastXButton = false;
 
     @Override
     public void init() {
@@ -38,13 +38,14 @@ public class teleOp extends OpMode {
                 shooterOn = false;
             }
 
+
             // Resume shooter at last non-zero power
-            boolean aButton = gamepad2.a;
-            if (aButton && !lastAButton) {
+            boolean xButton = gamepad2.a;
+            if (xButton && !lastXButton) {
                 shooterOn = true;
                 shooterPower = lastNonZeroPower;
             }
-            lastAButton = aButton;
+            lastXButton = xButton;
 
             // Adjust shooter power — one increment per press, not per loop
             boolean dpadUp = gamepad2.dpad_up;
@@ -61,11 +62,19 @@ public class teleOp extends OpMode {
             // Clamp so it stays in a valid range
             shooterPower = Math.max(0.0, Math.min(1.0, shooterPower));
 
-            // Remember the last power that wasn't zero, so "a" has something to restore
+            // Remember the last power that wasn't zero, so "x" has something to restore
             if (shooterPower > 0.0) {
                 lastNonZeroPower = shooterPower;
             }
 
             hwMap.setShooterPower(shooterOn ? shooterPower : 0.0);
+
+            // Transfer
+
+            if (gamepad2.right_bumper) {
+                hwMap.setTransferPower(1.0);
+            } else if  (gamepad2.left_bumper) {
+                hwMap.setTransferPower(-1.0);
+            }
         }
     }
