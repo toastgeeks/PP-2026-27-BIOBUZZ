@@ -1,10 +1,10 @@
-package org.firstinspires.ftc.teamcode.BioBuzz.LM1Autos;
+package org.firstinspires.ftc.teamcode.BioBuzz.LM1OpModes;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.teamcode.BioBuzz.RobotHardware;
 
-@Autonomous (name = "Park Only Auto")
+@Autonomous (name = "Park Only")
 public class parkOnlyAuto extends LinearOpMode {
 
     private RobotHardware robot = new RobotHardware();

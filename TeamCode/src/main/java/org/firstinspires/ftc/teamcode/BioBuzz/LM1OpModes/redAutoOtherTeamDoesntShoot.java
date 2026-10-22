@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.BioBuzz.LM1Autos;
+package org.firstinspires.ftc.teamcode.BioBuzz.LM1OpModes;
 
 import static com.pedropathing.api.Paths.*;
 
@@ -18,12 +18,12 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.teamcode.BioBuzz.RobotHardware;
 import org.firstinspires.ftc.teamcode.pedro.Constants;
 
-@Autonomous(name = "Blue Other Team Doesn't Shoot", group = "Autonomous")
-public class blueAutoOtherTeamDoesntShoot extends LinearOpMode {
+@Autonomous(name = "Red Other Team Doesn't Shoot", group = "Autonomous")
+public class redAutoOtherTeamDoesntShoot extends LinearOpMode {
     private Follower follower;
     private final RobotHardware robot = new RobotHardware();
 
-    private final PoseFactory poseFactory = PoseFactory.degrees().mirrorX(70.75);
+    private final PoseFactory poseFactory = PoseFactory.degrees();
 
     private final Pose shootPreload = poseFactory.of(56.5, 9.5, 90);
     private final Pose shootPreload_2 = poseFactory.of(56.5, 9.5, 90);
@@ -40,7 +40,7 @@ public class blueAutoOtherTeamDoesntShoot extends LinearOpMode {
     // Autonomous routine
     public Command autoRoutine() {
         return sequential(
-                
+
                 // Preload Shooting
                 follow(follower, shootPreload()),
                 instant(() -> robot.setShooterPower(1.0)), // Tune this value so that it doesn't shoot too far or too short
@@ -49,13 +49,13 @@ public class blueAutoOtherTeamDoesntShoot extends LinearOpMode {
                 waitMs(1000.0),
                 instant(() -> robot.setTransferPower(0.0)),
                 instant(() -> robot.setShooterPower(0.0)), // Tune this value to make sure the robot leaves its position as soon as it is done shooting
-                
+
                 // Intaking from flower
                 follow(follower, flowerIntake1()),
                 instant(() -> robot.setIntakePower(1.0)), // Tune this value to make sure the robot does not intake too fast
                 waitMs(500.0), // Tune this value to make sure it leaves as soon as it is done intaking
                 instant(() -> robot.setIntakePower(0.0)),
-                
+
                 // Shooting what we intaked from the flower
                 follow(follower, shootFlower1()),
                 instant(() -> robot.setShooterPower(1.0)), // Tune this value to make sure that the robot does not shoot too far or too short
@@ -79,8 +79,8 @@ public class blueAutoOtherTeamDoesntShoot extends LinearOpMode {
                 waitMs(1000.0), // Make sure the transfer and shooter stops running as soon as the balls are done shooting
                 instant(() -> robot.setTransferPower(0.0)),
                 instant(() -> robot.setShooterPower(0.0)),
-                
-                
+
+
                 follow(follower, park())
         );
     }
