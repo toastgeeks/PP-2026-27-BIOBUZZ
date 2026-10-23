@@ -25,8 +25,8 @@ public class redAutoOtherTeamDoesntShoot extends LinearOpMode {
 
     private final PoseFactory poseFactory = PoseFactory.degrees();
 
+    // The robot starts here AND shoots the preload from here, so no path is needed for the preload shot
     private final Pose shootPreload = poseFactory.of(56.5, 9.5, 90);
-    private final Pose shootPreload_2 = poseFactory.of(56.5, 9.5, 90);
     private final Pose flowerIntake1 = poseFactory.of(12.2992, 47.4713, 180);
     private final Pose shootFlower1 = poseFactory.of(58.2304, 127.146, -90);
     private final Pose shootFlower1Control1 = poseFactory.of(18.2, 99.9, 0);
@@ -41,8 +41,7 @@ public class redAutoOtherTeamDoesntShoot extends LinearOpMode {
     public Command autoRoutine() {
         return sequential(
 
-                // Preload Shooting
-                follow(follower, shootPreload()),
+                // Preload Shooting (robot is already at shootPreload, so it just shoots)
                 instant(() -> robot.setShooterPower(1.0)), // Tune this value so that it doesn't shoot too far or too short
                 waitMs(1000.0), // Tune this value so that as soon as it is full speed, the transfer code runs
                 instant(() -> robot.setTransferPower(1.0)), // Tune this value to make sure that it does not run too fast
@@ -115,11 +114,9 @@ public class redAutoOtherTeamDoesntShoot extends LinearOpMode {
         }
     }
 
-    public Path shootPreload() {
-        return line(shootPreload, shootPreload_2).linear(shootPreload, shootPreload_2);
-    }
+    // First path starts from the start/shoot pose
     public Path flowerIntake1() {
-        return line(shootPreload_2, flowerIntake1).linear(shootPreload_2, flowerIntake1);
+        return line(shootPreload, flowerIntake1).linear(shootPreload, flowerIntake1);
     }
 
     public Path shootFlower1() {

@@ -58,6 +58,12 @@ public class RobotHardware {
         shooter_r.setDirection(DcMotorSimple.Direction.FORWARD);
         shooter_l.setDirection(DcMotorSimple.Direction.REVERSE);
 
+        // Brake the drive motors when power is zero, so the robot stops instead of coasting
+        fr.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        fl.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        rr.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        rl.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
         //flicker.setDirection(Servo.Direction.FORWARD);
     }
 
