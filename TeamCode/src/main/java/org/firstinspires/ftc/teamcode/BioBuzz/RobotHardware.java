@@ -15,7 +15,8 @@ public class RobotHardware {
 
     private DcMotor intake;
     private DcMotor transfer;
-    private DcMotor shooter;
+    private DcMotor shooter_r;
+    private DcMotor shooter_l;
 
     //private Servo flicker;
 
@@ -30,7 +31,8 @@ public class RobotHardware {
 
         intake = hwMap.get(DcMotor.class, "intake");
         transfer = hwMap.get(DcMotor.class, "transfer");
-        shooter = hwMap.get(DcMotor.class, "shooter");
+        shooter_r = hwMap.get(DcMotor.class, "shooter_r");
+        shooter_l = hwMap.get(DcMotor.class, "shooter_l");
 
         //flicker = hwMap.get(Servo.class, "flicker");
 
@@ -42,7 +44,8 @@ public class RobotHardware {
 
         intake.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         transfer.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        shooter.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        shooter_r.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        shooter_l.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
         // Tells the code what direction to run the motors in
         rl.setDirection(DcMotorSimple.Direction.REVERSE);
@@ -50,9 +53,10 @@ public class RobotHardware {
         fr.setDirection(DcMotorSimple.Direction.FORWARD);
         rr.setDirection(DcMotorSimple.Direction.FORWARD);
 
-        intake.setDirection(DcMotorSimple.Direction.FORWARD);
+        intake.setDirection(DcMotorSimple.Direction.REVERSE);
         transfer.setDirection(DcMotorSimple.Direction.FORWARD);
-        shooter.setDirection(DcMotorSimple.Direction.FORWARD);
+        shooter_r.setDirection(DcMotorSimple.Direction.FORWARD);
+        shooter_l.setDirection(DcMotorSimple.Direction.REVERSE);
 
         //flicker.setDirection(Servo.Direction.FORWARD);
     }
@@ -95,7 +99,8 @@ public class RobotHardware {
 
     // Gives the shooter power
     public void setShooterPower(double power) {
-        shooter.setPower(power);
+        shooter_r.setPower(power);
+        shooter_l.setPower(power);
     }
 
     /*

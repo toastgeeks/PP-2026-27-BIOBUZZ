@@ -56,8 +56,10 @@ public class LM1TeleOp extends OpMode {
 
         if (dpadUp && !lastDpadUp) {
             shooterPower += 0.05;
+            telemetry.addData("Shooter Power", shooterPower + "%");
         } else if (dpadDown && !lastDpadDown) {
             shooterPower -= 0.05;
+            telemetry.addData("Shooter Power", shooterPower + "%");
         }
         lastDpadUp = dpadUp;
         lastDpadDown = dpadDown;
