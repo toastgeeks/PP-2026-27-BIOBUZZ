@@ -1,9 +1,6 @@
 package org.firstinspires.ftc.teamcode.BioBuzz;
 
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.hardware.*;
 
 public class RobotHardware {
 
@@ -15,8 +12,8 @@ public class RobotHardware {
 
     private DcMotor intake;
     private DcMotor transfer;
-    private DcMotor shooter_r;
-    private DcMotor shooter_l;
+    private DcMotorEx shooter_r;
+    private DcMotorEx shooter_l;
 
     //private Servo flicker;
 
@@ -31,8 +28,8 @@ public class RobotHardware {
 
         intake = hwMap.get(DcMotor.class, "intake");
         transfer = hwMap.get(DcMotor.class, "transfer");
-        shooter_r = hwMap.get(DcMotor.class, "shooter_r");
-        shooter_l = hwMap.get(DcMotor.class, "shooter_l");
+        shooter_r = hwMap.get(DcMotorEx.class, "shooter_r");
+        shooter_l = hwMap.get(DcMotorEx.class, "shooter_l");
 
         //flicker = hwMap.get(Servo.class, "flicker");
 
@@ -46,6 +43,8 @@ public class RobotHardware {
         transfer.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         shooter_r.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         shooter_l.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        shooter_l.setPIDFCoefficients(DcMotorEx.RunMode.RUN_USING_ENCODER, new PIDFCoefficients(356.7170, 0, 0, 17.8358));
+        shooter_r.setPIDFCoefficients(DcMotorEx.RunMode.RUN_USING_ENCODER, new PIDFCoefficients(356.7170, 0, 0, 17.8358));
 
         // Tells the code what direction to run the motors in
         rl.setDirection(DcMotorSimple.Direction.REVERSE);
@@ -104,9 +103,13 @@ public class RobotHardware {
     }
 
     // Gives the shooter power
-    public void setShooterPower(double power) {
-        shooter_r.setPower(power);
-        shooter_l.setPower(power);
+    public void setShooterVelocity(double power) {
+        shooter_r.setVelocity(power);
+        shooter_l.setVelocity(power);
+    }
+
+    public double getShooterVelocity() {
+        return shooter_r.getVelocity();
     }
 
     /*

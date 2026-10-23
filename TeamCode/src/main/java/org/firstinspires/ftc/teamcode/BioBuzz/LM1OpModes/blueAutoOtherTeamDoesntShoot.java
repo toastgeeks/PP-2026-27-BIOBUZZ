@@ -42,12 +42,12 @@ public class blueAutoOtherTeamDoesntShoot extends LinearOpMode {
         return sequential(
 
                 // Preload Shooting (robot is already at shootPreload, so it just shoots)
-                instant(() -> robot.setShooterPower(1.0)), // Tune this value so that it doesn't shoot too far or too short
+                instant(() -> robot.setShooterVelocity(1.0)), // Tune this value so that it doesn't shoot too far or too short
                 waitMs(1000.0), // Tune this value so that as soon as it is full speed, the transfer code runs
                 instant(() -> robot.setTransferPower(1.0)), // Tune this value to make sure that it does not run too fast
                 waitMs(1000.0),
                 instant(() -> robot.setTransferPower(0.0)),
-                instant(() -> robot.setShooterPower(0.0)), // Tune this value to make sure the robot leaves its position as soon as it is done shooting
+                instant(() -> robot.setShooterVelocity(0.0)), // Tune this value to make sure the robot leaves its position as soon as it is done shooting
 
                 // Intake from the flower
                 follow(follower, flowerIntake1()),
@@ -57,12 +57,12 @@ public class blueAutoOtherTeamDoesntShoot extends LinearOpMode {
 
                 // Shooting what we intake from the flower
                 follow(follower, shootFlower1()),
-                instant(() -> robot.setShooterPower(1.0)), // Tune this value to make sure that the robot does not shoot too far or too short
+                instant(() -> robot.setShooterVelocity(1.0)), // Tune this value to make sure that the robot does not shoot too far or too short
                 waitMs(1000.0), // Tune this value so that as soon as the intake is full speed, the transfer runs
                 instant(() -> robot.setTransferPower(1.0)), // Tune this value to make sure the transfer does not run too fast
                 waitMs(1000.0), // Tune this value to make sure the robot leaves its position as soon as it is done shooting
                 instant(() -> robot.setTransferPower(0.0)),
-                instant(() -> robot.setShooterPower(0.0)),
+                instant(() -> robot.setShooterVelocity(0.0)),
 
                 // Intake from the flower a second time
                 follow(follower, flowerIntake2()),
@@ -72,12 +72,12 @@ public class blueAutoOtherTeamDoesntShoot extends LinearOpMode {
 
                 // Shooting what we intake from the flower the second time
                 follow(follower, shootFlower2()),
-                instant(() -> robot.setShooterPower(1.0)), // Tune this value to make sure the robot doesn't shoot too far or too short
+                instant(() -> robot.setShooterVelocity(1.0)), // Tune this value to make sure the robot doesn't shoot too far or too short
                 waitMs(1000.0), // Tune this value to make sure that as soon as the shooter is full speed, the transfer runs
                 instant(() -> robot.setTransferPower(1.0)), // Make sure this doesn't run too fast
                 waitMs(1000.0), // Make sure the transfer and shooter stops running as soon as the balls are done shooting
                 instant(() -> robot.setTransferPower(0.0)),
-                instant(() -> robot.setShooterPower(0.0)),
+                instant(() -> robot.setShooterVelocity(0.0)),
 
 
                 follow(follower, park())
@@ -113,6 +113,7 @@ public class blueAutoOtherTeamDoesntShoot extends LinearOpMode {
             telemetry.update();
         }
     }
+
 
     // First path starts from the start/shoot pose
     public Path flowerIntake1() {

@@ -69,7 +69,7 @@ public class TeleFunctionTest extends OpMode {
         } else if (gamepad2.b) {
             shooterPower = 0.0;
         }
-        robot.setShooterPower(shooterPower);
+        robot.setShooterVelocity(shooterPower);
 
           /*
         // Flicker
@@ -88,7 +88,7 @@ public class TeleFunctionTest extends OpMode {
         robot.setWheelPowers(0.0, 0.0, 0.0, 0.0);
         robot.setIntakePower(0.0);
         robot.setTransferPower(0.0);
-        robot.setShooterPower(0.0);
+        robot.setShooterVelocity(0.0);
         //robot.setFlickerPosition(0.0);
     }
 }
