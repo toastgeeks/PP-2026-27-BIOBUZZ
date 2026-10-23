@@ -42,7 +42,7 @@ public class RobotHardware {
 
         intake.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         transfer.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        shooter.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        shooter.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
         // Tells the code what direction to run the motors in
         rl.setDirection(DcMotorSimple.Direction.REVERSE);
