@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.teamcode.BioBuzz.RobotHardware;
 
-@Autonomous (name = "Tinker Auto")
+//@Autonomous (name = "Tinker Auto")
 public class tinkerAuto extends LinearOpMode {
 
     private RobotHardware robot = new RobotHardware();

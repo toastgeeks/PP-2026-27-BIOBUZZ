@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import org.firstinspires.ftc.teamcode.BioBuzz.RobotHardware;
 
-@TeleOp (name = "Tinker TeleOp")
+//@TeleOp (name = "Tinker TeleOp")
 public class tinkerTele extends OpMode {
     private RobotHardware robot = new RobotHardware();
 

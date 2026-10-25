@@ -43,8 +43,8 @@ public class RobotHardware {
         transfer.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         shooter_r.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         shooter_l.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        shooter_l.setPIDFCoefficients(DcMotorEx.RunMode.RUN_USING_ENCODER, new PIDFCoefficients(356.7170, 0, 0, 17.8358));
-        shooter_r.setPIDFCoefficients(DcMotorEx.RunMode.RUN_USING_ENCODER, new PIDFCoefficients(356.7170, 0, 0, 17.8358));
+        shooter_l.setPIDFCoefficients(DcMotorEx.RunMode.RUN_USING_ENCODER, new PIDFCoefficients(326.3326, 0.7611, 0, 16.3166));
+        shooter_r.setPIDFCoefficients(DcMotorEx.RunMode.RUN_USING_ENCODER, new PIDFCoefficients(326.3326, 0.7611, 0, 16.3166));
 
         // Tells the code what direction to run the motors in
         rl.setDirection(DcMotorSimple.Direction.REVERSE);

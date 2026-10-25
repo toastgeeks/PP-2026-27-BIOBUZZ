@@ -38,10 +38,18 @@ public class LM1TeleOp extends OpMode {
         // Drivetrain
         DrivePowers powers = ManualDrive.fieldCentric(
                 -gamepad1.left_stick_y,
-                -gamepad1.left_stick_x,
-                -gamepad1.right_stick_x,
+                gamepad1.left_stick_x,
+                gamepad1.right_stick_x,
                 follower.pose().heading()
         );
+
+
+        // relocalise button
+        if (gamepad1.x) {
+            Pose cornerPose = new Pose(10.5, 10.5, Math.toRadians(90));
+            // On the fly Pose creation, we dont recommend this for Autonomous. Only accepts radians for heading
+            follower.setPose(cornerPose); // overrides our pose
+        }
 
         ManualDrive.driveOrHold(follower, powers);
         follower.update();
@@ -84,7 +92,7 @@ public class LM1TeleOp extends OpMode {
         lastDpadDown = dpadDown;
 
         // Clamp so it stays in a valid range
-        shooterPower = Math.max(0.0, Math.min(1900.0, shooterPower));
+        shooterPower = Math.max(0.0, Math.min(1200.0, shooterPower));
 
         // Remember the last power that wasn't zero, so "a" has something to restore
         if (shooterPower > 0.0) {
