@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.BioBuzz;
+package org.firstinspires.ftc.teamcode.bioBuzz.leagueMeetOne;
 
 import com.qualcomm.robotcore.hardware.*;
 
@@ -41,8 +41,6 @@ public class RobotHardware {
 
         intake.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         transfer.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        shooter_r.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        shooter_l.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         shooter_l.setPIDFCoefficients(DcMotorEx.RunMode.RUN_USING_ENCODER, new PIDFCoefficients(326.3326, 0.7611, 0, 16.3166));
         shooter_r.setPIDFCoefficients(DcMotorEx.RunMode.RUN_USING_ENCODER, new PIDFCoefficients(326.3326, 0.7611, 0, 16.3166));
 

@@ -1,11 +1,10 @@
-package org.firstinspires.ftc.teamcode.BioBuzz.LM1OpModes;
+package org.firstinspires.ftc.teamcode.bioBuzz.tinkerFest;
 
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import org.firstinspires.ftc.teamcode.BioBuzz.RobotHardware;
+import org.firstinspires.ftc.teamcode.bioBuzz.leagueMeetOne.RobotHardware;
 
-@Autonomous (name = "Park Only")
-public class parkOnlyAuto extends LinearOpMode {
+//@Autonomous (name = "Tinker Auto")
+public class tinkerAuto extends LinearOpMode {
 
     private RobotHardware robot = new RobotHardware();
 
@@ -18,13 +17,6 @@ public class parkOnlyAuto extends LinearOpMode {
         waitForStart();
 
         if (opModeIsActive()) {
-
-            // Go forward at full power for RP
-            robot.drive(0.5, 0.0, 0.0);
-
-            sleep(100); // Runs the auto for 1/10 of a second
-
-            robot.drive(0.0, 0.0, 0.0); // Stops all drive motors
 
             // Strafe left at full power (y = 0, x = -1, r = 0)
             robot.drive(0.0, -1.0, 0.0);

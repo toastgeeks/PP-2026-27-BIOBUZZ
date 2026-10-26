@@ -1,8 +1,7 @@
-package org.firstinspires.ftc.teamcode.BioBuzz.Tinkerfest;
+package org.firstinspires.ftc.teamcode.bioBuzz.tinkerFest;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import org.firstinspires.ftc.teamcode.BioBuzz.RobotHardware;
+import org.firstinspires.ftc.teamcode.bioBuzz.leagueMeetOne.RobotHardware;
 
 //@TeleOp (name = "Tinker TeleOp")
 public class tinkerTele extends OpMode {

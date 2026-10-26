@@ -1,8 +1,6 @@
-package org.firstinspires.ftc.teamcode.BioBuzz.LM1OpModes;
+package org.firstinspires.ftc.teamcode.bioBuzz.leagueMeetOne;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import org.firstinspires.ftc.teamcode.BioBuzz.RobotHardware;
 
 /*
 Diagnostic OpMode for testing each motor individually.
@@ -20,7 +18,7 @@ directions, and methods your real TeleOp and autos use.
    Right bumper  = transfer forward  Left bumper  = transfer backward
    A = shooter on at 1.0             B = shooter off (0.0)
 */
-@TeleOp(name = "Function Test")
+//@TeleOp(name = "Function Test")
 public class TeleFunctionTest extends OpMode {
 
     // Power used for the drivetrain motors while a D-pad button is held

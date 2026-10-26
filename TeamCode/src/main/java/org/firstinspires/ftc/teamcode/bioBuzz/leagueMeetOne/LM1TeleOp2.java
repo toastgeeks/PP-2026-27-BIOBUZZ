@@ -1,9 +1,8 @@
-package org.firstinspires.ftc.teamcode.BioBuzz.LM1OpModes;
+package org.firstinspires.ftc.teamcode.bioBuzz.leagueMeetOne;
 
 import com.pedropathing.follower.Follower;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import org.firstinspires.ftc.teamcode.BioBuzz.RobotHardware;
 import org.firstinspires.ftc.teamcode.pedro.Constants;
 
 @TeleOp(name = "LM1 TeleOp2")
