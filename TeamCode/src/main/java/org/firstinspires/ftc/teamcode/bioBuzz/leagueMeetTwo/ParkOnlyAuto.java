@@ -1,11 +1,13 @@
-package org.firstinspires.ftc.teamcode.bioBuzz.leagueMeetOne;
+package org.firstinspires.ftc.teamcode.bioBuzz.leagueMeetTwo;
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import org.firstinspires.ftc.teamcode.bioBuzz.hardwareMap.Drivetrain;
 
-//@Autonomous (name = "Park Only")
-public class parkOnlyAuto extends LinearOpMode {
+@Autonomous(name = "Park Only Auto")
+public class ParkOnlyAuto extends LinearOpMode {
 
-    private RobotHardware robot = new RobotHardware();
+    private Drivetrain robot = new Drivetrain();
 
     @Override
     public void runOpMode() {
@@ -16,13 +18,6 @@ public class parkOnlyAuto extends LinearOpMode {
         waitForStart();
 
         if (opModeIsActive()) {
-
-            // Go forward at full power for RP
-            robot.drive(0.5, 0.0, 0.0);
-
-            sleep(100); // Runs the auto for 1/10 of a second
-
-            robot.drive(0.0, 0.0, 0.0); // Stops all drive motors
 
             // Strafe left at full power (y = 0, x = -1, r = 0)
             robot.drive(0.0, -1.0, 0.0);

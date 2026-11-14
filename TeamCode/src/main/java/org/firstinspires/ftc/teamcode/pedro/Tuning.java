@@ -13,7 +13,7 @@ import org.firstinspires.ftc.teamcode.pedro.procedures.Tests;
 public class Tuning {
 
     @Tuner
-    public static Procedure foresightTuner() {
-        return new ForesightTuner((hardwareMap) -> new PinpointLocalizer(hardwareMap, Constants.localizerConfig), (hardwareMap) -> new Mecanum(hardwareMap, Constants.drivetrainConfig));
+    public static Procedure pinpointTuner() {
+        return new PinpointTuner();
     }
 }

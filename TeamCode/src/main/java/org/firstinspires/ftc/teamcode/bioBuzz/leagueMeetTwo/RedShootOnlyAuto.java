@@ -1,6 +1,6 @@
-package org.firstinspires.ftc.teamcode.bioBuzz.leagueMeetOne;
+package org.firstinspires.ftc.teamcode.bioBuzz.leagueMeetTwo;
 
-import static com.pedropathing.api.Paths.*;
+import com.pedropathing.api.Paths;
 
 import com.pedropathing.api.PoseFactory;
 import com.pedropathing.follower.Follower;
@@ -12,39 +12,42 @@ import static com.pedropathing.ivy.Scheduler.schedule;
 import static com.pedropathing.ivy.commands.Commands.*;
 import static com.pedropathing.ivy.groups.Groups.sequential;
 import static com.pedropathing.ivy.pedro.PedroCommands.follow;
-
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import org.firstinspires.ftc.teamcode.bioBuzz.hardwareMap.*;
 import org.firstinspires.ftc.teamcode.pedro.Constants;
 
-//@Autonomous(name = "Blue Auto", group = "Autonomous")
-public class BlueAuto extends LinearOpMode {
+@Autonomous(name = "Red Shoot Only", group = "Autonomous")
+public class RedShootOnlyAuto extends LinearOpMode {
+    private final Intake intake = new Intake();
+    private final Shooter shooter = new Shooter();
+    private final Transfer transfer = new Transfer();
+    private final Flicker flicker = new Flicker();
 
     private Follower follower;
 
-    private final RobotHardware robot = new RobotHardware();
+    private final PoseFactory poseFactory = PoseFactory.degrees();
 
-    private final PoseFactory poseFactory = PoseFactory.degrees().mirrorX(70.75);
-
-    private final Pose start = poseFactory.of(57.7131, 9.1992, -90);
-    private final Pose shootPreload = poseFactory.of(57.7131, 9.1992, 90);
-    private final Pose park = poseFactory.of(10.9377, 97.6017, 0);
-    private final Pose parkControl1 = poseFactory.of(19.2721, 38.2358, 0);
+    private final Pose start = poseFactory.of(56.2307, 8.8459, -90);
+    private final Pose park = poseFactory.of(10.7815, 106.75, 0);
+    private final Pose parkControl1 = poseFactory.of(17.4154, 54.3738, 0);
 
     // Autonomous routine
     public Command autoRoutine() {
         return sequential(
-                instant(() -> robot.setShooterVelocity(1150)),
-                waitMs(1000.0),
-                instant(() -> robot.setShooterVelocity(0)),
+                instant(() -> shooter.setVelocity(1150.0)),
+                instant(() -> intake.setPower(1.0)),
+                instant(() -> transfer.setPower(1.0)),
+                waitMs(700),
+                instant(() -> shooter.setVelocity(0.0)),
+                instant(() -> intake.setPower(0.0)),
+                instant(() -> transfer.setPower(0.0)),
                 follow(follower, park())
         );
     }
 
     @Override
     public void runOpMode() {
-
-        robot.init(hardwareMap);
-
         Scheduler.reset();
         follower = Constants.create(hardwareMap);
         follower.setPose(start);
@@ -70,11 +73,7 @@ public class BlueAuto extends LinearOpMode {
         }
     }
 
-    public Path shootPreload() {
-        return line(start, shootPreload).linear(start, shootPreload);
-    }
-
     public Path park() {
-        return curve(shootPreload, parkControl1, park).linear(shootPreload, park);
+        return Paths.curve(start, parkControl1, park).linear(start, park);
     }
 }

@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.hardware.*;
 
 public class Transfer {
 
-    // Tells the code what the tranfer is in the robot config
+    // Tells the code what the transfer is in the robot config
     private DcMotor transfer;
 
     public void init(HardwareMap hwMap) {

@@ -19,7 +19,7 @@ public class Drivetrain {
         rr = hwMap.get(DcMotor.class, "rr");
         rl = hwMap.get(DcMotor.class, "rl");
 
-        // Sets whether or not the wheels use encoders
+        // Sets whether the wheels use encoders
 
         fr.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         fl.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
